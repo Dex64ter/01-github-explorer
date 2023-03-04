@@ -12,5 +12,7 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6"
-  }
+  },
+  "repository": "git@github.com:Dex64ter/01-github-explorer.git",
+  "author": "Davi J <davijosantos.dj@gmail.com>"
 }
