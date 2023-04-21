@@ -1,4 +1,12 @@
-export function RepositoryItem(props) { // props é um parâmetro que recebe todas as propriedades passadas pelo parent desse componente na aplicação
+interface RepositoryItemProps {
+    repository: {
+        name: string;
+        description: string;
+        html_url: string;
+    }
+}
+
+export function RepositoryItem(props: RepositoryItemProps) { // props é um parâmetro que recebe todas as propriedades passadas pelo parent desse componente na aplicação
     return (
         <li>
             <strong>{props.repository.name}</strong> {/* Utiliza-se '??' como expressão condicional de "se caso não exista a da esquerda use a da direita" */}

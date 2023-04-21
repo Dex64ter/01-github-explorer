@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react"; // O useEffect e useState são ganchos, eles são usados para executar algo com componentes no react
+// O useEffect e useState são ganchos, eles são usados para executar algo com componentes no react
+import { useEffect, useState } from "react"; 
 import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss'
 
+// imutabilidade - uma variável nunca muda de valor, é adicionado um novo valor a ela
+
 // https://api.github.com/users/Dex64ter/repos
 
-const repositoryName = 'unform';
-
-const repository = {
-    name: "Unform",
-    description: "Form in React",
-    link: "https://github.com/Dex64ter",
+interface Repository {
+    name: string;
+    description: string;
+    html_url: string 
 
 }
 
 export function RepositoryList() {
-    const [repositories, setRepositories] = useState([]); // Usado para trocar o valor de uma variável dentro da aplicação
+    // <> usado no hook é uma tipagem do Typescript para verificar o tipo de dado que estará sendo alterado de estado
+    const [repositories, setRepositories] = useState<Repository[]>([]); // Usado para trocar o valor de uma variável dentro da aplicação
 
     // Estrutura do useEffect   -   usado para executar uma função (primeiro parâmetro) sempre
     // que uma variável ou variáveis (segundo parâmetro) forem atualizadas
